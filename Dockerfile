@@ -24,4 +24,7 @@ RUN \
   sbt sbtVersion
 
 RUN mkdir -p /usr/src/app
+COPY . /usr/src/app
 WORKDIR /usr/src/app
+RUN sbt compile
+RUN rm -rf /usr/src/app/*  
